@@ -3,18 +3,18 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
   Write-Warning "Insufficient permissions to run this script. Open the PowerShell console as administrator and run this script again."
   Break
 } else {
-  Write-Host "Running as administrator — continuing execution..." -ForegroundColor Green
+  Write-Host "Running as administrator â€” continuing execution..." -ForegroundColor Green
 }
 
  $patchfile  = $args[0]
 
  if ($patchfile -eq  $null) {
-   $patchfile = ".\dbx-2021-April.bin"
+   $patchfile = "c:\sdc\dbx-2021-April.bin"
    Write-Host "Patchfile not specified, using latest $patchfile`n"
  }
  $patchfile = (gci $patchfile).FullName
 
- Import-Module -Force .\Get-UEFIDatabaseSignatures.ps1
+ Import-Module -Force c:\sdc\Get-UEFIDatabaseSignatures.ps1
 
  # Print computer info
  $computer = gwmi Win32_ComputerSystem
