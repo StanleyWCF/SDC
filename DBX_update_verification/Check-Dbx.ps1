@@ -3,7 +3,7 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
   Write-Warning "Insufficient permissions to run this script. Open the PowerShell console as administrator and run this script again."
   Break
 } else {
-  Write-Host "Running as administrator — continuing execution..." -ForegroundColor Green
+  Write-Host "Running as administrator - continuing execution..." -ForegroundColor Green
 }
 
  $patchfile  = $args[0]
@@ -73,5 +73,5 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
  } elseif ($successes -eq 0) {
      Write-Error "!!! Unexpected failure:  no successes detected, check command-line usage."
  } else {
-     Write-Host "SUCCESS:  dbx.bin patch appears to be successfully applied"
+     Write-Host "SUCCESS:  dbx.bin patch appears to be successfully applied."
  }
